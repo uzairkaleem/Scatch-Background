@@ -19,6 +19,7 @@
   "homepage": "https://github.com/uzairkaleem/Scatch-Background#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "config": "^4.1.1",
     "cookie": "^1.0.2",
     "cookie-parser": "^1.4.7",
     "express": "^5.1.0",

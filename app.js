@@ -8,10 +8,19 @@ const jwt = require('jsonwebtoken');
 const path = require('path');
 const User = require('./models/user-model');
 const Product = require('./models/product-model');
-// const auth = require('./middleware/auth');
+const Owner = require('./models/owner-model');
+const userRoute = require('./routes/userRoute');
+const productRoute = require('./routes/productRoute');
+const ownerRoute = require('./routes/ownerRoute');
+const mongooseConnection = require('./config/mongoose-connection');
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/api', userRoute);
+app.use('/api', productRoute);
+app.use('/api', ownerRoute);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
